@@ -154,16 +154,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 confirmButton.style.display = 'block';
             } else {
                 currentRegistrationId = null;
-                showErrorModal(data.message);
+                if (data.message)
+                    showErrorModal(data.message);
+                else
+                    showErrorModal('Something went wrong. Please try again.');
                 confirmButton.style.display = 'none';
-                playSound(false);
             }
         })
         .catch(error => {
             currentRegistrationId = null;
             showErrorModal('Error looking up registration: ' + error.message);
             confirmButton.style.display = 'none';
-            playSound(false);
         });
     }
 
@@ -183,15 +184,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.status === 'success') {
                 updateModalWithCheckinSuccess(data);
                 confirmButton.style.display = 'none';
-                playSound(true);
             } else {
                 appendErrorToModal(data.message);
-                playSound(false);
             }
         })
         .catch(error => {
             appendErrorToModal('Error processing check-in');
-            playSound(false);
         });
     }
 
@@ -268,12 +266,6 @@ document.addEventListener('DOMContentLoaded', function() {
         resultContent.appendChild(errorDiv);
     }
 
-    // Play sound based on result
-    function playSound(success) {
-        const audio = new Audio(success ? '/static/sounds/success.mp3' : '/static/sounds/error.mp3');
-        audio.play();
-    }
-
     // Close modal
     function closeModal() {
         resultModal.style.display = 'none';
@@ -283,7 +275,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Scan for QR codes
     function scan() {
-        console.log("Scanning...");
         if (!scanning) return;
         if (modalOpen) {
             setTimeout(scan, 1000);
@@ -301,7 +292,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 processScanResult(code.data);
                 // Pause scanning while modal is open
                 scanning = false;
-                setTimeout(() => { scanning = true; }, 2000);
+                setTimeout(() => { 
+                    scanning = true;
+                    scan();
+                }, 2000);
             }
         }
         requestAnimationFrame(scan);
