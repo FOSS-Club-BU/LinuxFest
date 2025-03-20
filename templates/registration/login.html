@@ -9,7 +9,7 @@
     <div class="bg-terminal-black border border-terminal-green p-6 rounded-lg">
         <h1 class="text-xl font-bold text-terminal-green mb-6">[Sign In]</h1>
         
-        <form class="space-y-4" method="post" action="{% url 'account_login' %}">
+        <form class="space-y-4" method="post" action="{% url 'login' %}">
             {% csrf_token %}
             
             {% if form.errors %}
@@ -19,10 +19,10 @@
             {% endif %}
             
             <div>
-                <label class="text-terminal-purple" for="{{ form.login.id_for_label }}">
-                    > Email_
+                <label class="text-terminal-purple" for="id_username">
+                    > Username or Email_
                 </label>
-                {% render_field form.login class="terminal-input w-full mt-1" placeholder="user@example.com" %}
+                <input type="text" name="username" id="id_username" class="terminal-input w-full mt-1" placeholder="user@example.com" required>
             </div>
             
             <div>
@@ -48,9 +48,7 @@
                 <button type="submit" class="terminal-button">
                     {% trans "Sign In" %} >
                 </button>
-                <a href="{% url 'account_reset_password' %}" class="text-sm terminal-link">
-                    Forgot Password?
-                </a>
+
             </div>
         </form>
         
