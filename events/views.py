@@ -23,8 +23,9 @@ def event_detail(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     
     if not event.registration_open:
-        messages.error(request, 'Registration is closed for this event.')
-        return redirect('events:list')
+        return render(request, 'events/registration_closed.html', {
+            'event': event
+        })
     
     form = DynamicRegistrationForm(event=event)
     return render(request, 'events/event_detail.html', {
@@ -36,8 +37,9 @@ def event_registration(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     
     if not event.registration_open:
-        messages.error(request, 'Registration is closed for this event.')
-        return redirect('events:list')
+        return render(request, 'events/registration_closed.html', {
+            'event': event
+        })
     
     if request.method == 'POST':
         form = DynamicRegistrationForm(request.POST, request.FILES, event=event)
