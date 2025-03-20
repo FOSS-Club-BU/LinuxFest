@@ -11,6 +11,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls', namespace='dashboard')),
     path('registrations/', include('registrations.urls', namespace='registrations')),
     path('checkin/', include('checkin.urls', namespace='checkin')),
+    path('accounts/', include('django.contrib.auth.urls')),  # Added for login functionality
 ]
 
 if settings.DEBUG:
