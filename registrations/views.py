@@ -18,6 +18,12 @@ def send_bulk_emails(request):
     if request.method == 'POST':
         approved_registrations = Registration.objects.filter(status='approved')
         for registration in approved_registrations:
+            # Check if email has already been sent
+            if EmailCommunication.objects.filter(registration=registration, email_type='event_update').exists():
+                print(f"Email already sent to {registration.email}")
+                continue
+            print(f"Sending email to {registration.email}")
+
             # Generate iCal Event
             calendar = Calendar()
             event = IcsEvent()
@@ -54,6 +60,7 @@ def send_bulk_emails(request):
             email.send()
 
             # Create EmailCommunication object
+            print(f"Email sent to {registration.email}")
             EmailCommunication.objects.create(
                 registration=registration,
                 email_type='event_update'
