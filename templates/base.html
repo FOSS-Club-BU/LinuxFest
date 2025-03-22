@@ -191,6 +191,10 @@
                     <div class="space-x-4">
                         {% if user.is_authenticated %}
                             {% if user.is_staff %}
+                                <a href="/checkin"
+                                   class="terminal-link terminal-link-hover terminal-command">Checkin</a>
+                            {% endif %}
+                            {% if user.is_superuser %}
                                 <a href="{% url 'admin:index' %}"
                                    class="terminal-link terminal-link-hover terminal-command">Admin</a>
                                 <a href="{% url 'dashboard:index' %}"

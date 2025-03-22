@@ -13,7 +13,7 @@ from events.models import Event, FormField
 from registrations.models import Registration, EmailCommunication
 
 def is_staff_check(user):
-    return user.is_staff
+    return user.is_superuser
 
 @user_passes_test(is_staff_check)
 def export_registrations(request, event_id):
