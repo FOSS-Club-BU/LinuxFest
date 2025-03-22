@@ -2,7 +2,7 @@ asgiref==3.8.1
 click==8.1.8
 colorama==0.4.6
 cssbeautifier==1.15.4
-Django==5.1.6
+Django==5.1.7
 django-allauth==65.4.1
 django-tailwind==3.8.0
 django-widget-tweaks==1.5.0
