@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Send Bulk Emails</h1>
+<form method="post" id="emailForm">
+    {% csrf_token %}
+    <label for="custom_content">Custom Email Content:</label><br>
+    <textarea id="custom_content" name="custom_content" rows="10" cols="50">
+Dear {name},
+
+You are approved for the event {event_name}.
+    </textarea><br><br>
+    <button type="submit">Send Emails</button>
+</form>
+{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Event reminder email for {{ event_name }}">
+    <meta name="keywords" content="Linux Fest, event, reminder, QR code">
+    <title>Event Reminder - {{ event_name }}</title>
+    <style></style>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
+    <p>Hello {{ name }},</p>
+    <p class="important">
+        This is a reminder for Linux Fest, happening tomorrow.
+    </p>
+    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <h3>Event Details:</h3>
+        <ul>
+            <li><strong>Start Time:</strong> 10.30 AM</li>
+            <p>You can view the schedule <a href="https://linuxfest.fossbu.co/#schedule">here</a>.</p>
+        </ul>
+    </div>
+    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <h3>Ways to Reach Bennett University:</h3>
+        <ol>
+            <li>Take the Blue Line Metro to Sector 52, switch to the Aqua Line to Pari Chowk, then take an auto or cab from Pari Chowk.</li>
+            <li>Public bus from Botanical Garden/Noida Sector 37 to Pari Chowk, then take an auto or cab.</li>
+            <li>You can take direct cab from Botanical Garden.</li>
+        </ol>
+    </div>
+    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <h3>Instructions:</h3>
+            <p>The event will be held in PLH 101 & 102 in P Block. Once you enter the university, you can ask anyone where P Block is located. You will find the registration/check-in table at the P Block entrance.</p>
+            <p> Incase of any issue, please contact Rahul at 7000910205 or Shrijan at 8953017920</p>
+
+    </div>
+
+        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <h3>Join our Community:</h3>
+        <p>For easier communication and updates, please join our:</p>
+        <ul>
+            <li>
+                <a href="https://chat.whatsapp.com/DMQ5ddNxfSg8u2Ya8ANDEb">WhatsApp Group</a>
+            </li>
+            <li>
+                <a href="https://t.me/fossbu">Telegram Group</a>
+            </li>
+        </ul>
+    </div>
+    <p class="important">Please bring a valid ID along with this email for verification at the event.</p>
+    <p>Here is your QR code for the event:</p>
+    <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ registration.uuid }}" alt="QR Code Ticket" width="200" height="200">
+        <p>
+            If you cannot see the QR code above, <a href="https://linuxfest.fossbu.co/events/qr/{{ registration.uuid }}">click here</a> to view it in your browser.
+        </p>
+    </div>
+    <p>If you are unable to attend, please let us know by clicking the button below:</p>
+    <p>
+        <a href="https://linuxfest.fossbu.co{% url 'registrations:rsvp_decline' registration.uuid %}" style="display: inline-block; padding: 12px 25px; margin: 15px 0; font-size: 16px; color: #fff; background-color: #DC2626; text-decoration: none; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+           I won't be able to attend
+        </a>
+    </p>
+    <p>We look forward to seeing you at the event!</p>
+    <p style="margin-top: 20px;">Regards,<br>FOSS Club BU</p>
+</body>
+</html>
