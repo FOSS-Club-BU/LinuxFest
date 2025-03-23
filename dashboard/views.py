@@ -91,18 +91,24 @@ def event_list(request):
 @user_passes_test(is_staff_check)
 def event_registrations(request, event_id):
     event = get_object_or_404(Event, id=event_id)
-    registrations = Registration.objects.filter(event=event).order_by('-registration_date')
+    registrations = Registration.objects.filter(event=event)
+    
+    # Calculate stats
     stats = {
         'total': registrations.count(),
         'pending': registrations.filter(status='pending').count(),
         'approved': registrations.filter(status='approved').count(),
         'rejected': registrations.filter(status='rejected').count(),
+        'checked_in': registrations.exclude(check_in_time=None).count()
     }
-    return render(request, 'dashboard/events/registrations.html', {
+    
+    context = {
         'event': event,
         'registrations': registrations,
         'stats': stats,
-    })
+    }
+    
+    return render(request, 'dashboard/events/registrations.html', context)
 
 @user_passes_test(is_staff_check)
 def event_create(request):

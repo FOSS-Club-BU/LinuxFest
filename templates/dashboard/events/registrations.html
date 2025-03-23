@@ -9,7 +9,7 @@
     </div>
 
     <!-- Stats -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
         <div class="bg-terminal-black border border-terminal-green p-4 rounded-lg">
             <h3 class="text-terminal-purple text-sm mb-1">Total Registrations</h3>
             <p class="text-2xl text-terminal-white">{{ stats.total }}</p>
@@ -25,6 +25,10 @@
         <div class="bg-terminal-black border border-terminal-green p-4 rounded-lg">
             <h3 class="text-terminal-purple text-sm mb-1">Rejected</h3>
             <p class="text-2xl text-terminal-red">{{ stats.rejected }}</p>
+        </div>
+        <div class="bg-terminal-black border border-terminal-green p-4 rounded-lg">
+            <h3 class="text-terminal-purple text-sm mb-1">Checked In</h3>
+            <p class="text-2xl text-terminal-blue">{{ stats.checked_in }}</p>
         </div>
     </div>
 
