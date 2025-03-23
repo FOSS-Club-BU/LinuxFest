@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Linux Fest - Open Source Technology Conference{% endblock %}
+
 {% block content %}
-    <div class="flex flex-col space-y-8">
-        <!-- Terminal Header -->
-        <div class="text-terminal-green font-mono text-center">
-            <pre class="hidden md:block">
+<div class="flex flex-col space-y-8">
+    <!-- Terminal Header -->
+    <div class="text-terminal-green font-mono text-center">
+        <pre class="hidden md:block">
  _     _                  ______         _   
 | |   (_)                |  ____|       | |  
 | |    _ _ __  _   ___  | |__ ___  ___| |_ 
@@ -13,267 +14,205 @@
 | |___| | | | | |_| |>  <| ||  __/\__ \ |_ 
 |_____|_|_| |_|\__,_/_/\_\_| \___||___/\__|
         </pre>
-            <h1 class="md:hidden text-3xl font-bold">Linux Fest</h1>
-            <p class="text-terminal-purple mt-4">/* An interactive meetup of Linux Enthusiasts */</p>
-        </div>
-        <div class="flex justify-center">
-            <div class="border border-terminal-green rounded-lg p-6">
-                <img src="{% static 'FOSS_BU_DARK_H.png' %}" alt="Linux Fest" class="w-56" />
-            </div>
-        </div>
-        <!-- Event Info -->
-        <div class="border border-terminal-green p-6 rounded-lg">
-            <h2 class="text-xl font-bold text-terminal-green mb-4">[Event Details]</h2>
-            <div class="terminal-style space-y-2">
-                <p>
-                    <span class="text-terminal-purple">$</span> <span class="text-terminal-yellow">echo</span> "Join us for a day of technology, innovation, and community!"
-                </p>
-                <p>
-                    <span class="text-terminal-purple">$</span> <span class="text-terminal-yellow">date</span> --meetup
-                </p>
-                <p class="ml-4">
-                    Date: 23<sup>rd</sup> March, 2025
-                </p>
-                <p>
-                    <span class="text-terminal-purple">$</span> <span class="text-terminal-yellow">locate</span> "venue"
-                </p>
-                <p class="ml-4">Location: Bennett University, Greater Noida</p>
-            </div>
-        </div>
-        <!-- Features -->
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="border border-terminal-green p-6 rounded-lg">
-                <h3 class="text-lg font-bold text-terminal-green mb-4">[Featured Tracks]</h3>
-                <ul class="space-y-2">
-                    <li>
-                        <span class="text-terminal-purple">>></span> Beginner's Guide to Linux
-                    </li>
-                    <li>
-                        <span class="text-terminal-purple">>></span> Skill Up your Linux Game
-                    </li>
-                    <li>
-                        <span class="text-terminal-purple">>></span> Experience Zone and Install Fest
-                    </li>
-                    <!-- <li><span class="text-terminal-purple">>></span> System Administration</li> -->
-                    <!-- <li><span class="text-terminal-purple">>></span> Community & Collaboration</li> -->
-                </ul>
-            </div>
-            <div class="border border-terminal-green p-6 rounded-lg">
-                <h3 class="text-lg font-bold text-terminal-green mb-4">[Why Attend?]</h3>
-                <ul class="space-y-2">
-                    <li>
-                        <span class="text-terminal-purple">>></span> Expert-led workshops and talks
-                    </li>
-                    <li>
-                        <span class="text-terminal-purple">>></span> Networking opportunities
-                    </li>
-                    <!-- <li><span class="text-terminal-purple">>></span> Live demonstrations</li> -->
-                    <li>
-                        <span class="text-terminal-purple">>></span> Community showcases
-                    </li>
-                    <!-- <li><span class="text-terminal-purple">>></span> Exclusive swag and goodies</li> -->
-                </ul>
-            </div>
-        </div>
-        <!-- Event Timeline -->
-        <section id="schedule" class="mt-8 mb-8">
-            <h2 class="text-2xl font-bold text-terminal-green text-center mb-6 animate-pulse">[Event Schedule]</h2>
-            <ol class="relative border-s border-terminal-green dark:border-terminal-green">
-                <li class="mb-10 ms-6 animate__animated animate__fadeIn">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 animate-ping-slow">
-                        <svg class="w-2.5 h-2.5 text-terminal-black"
-                             aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg"
-                             fill="currentColor"
-                             viewBox="0 0 20 20">
-                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                        </svg>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-semibold text-terminal-green">
-                        Registration & Check-in<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">10:30 AM</span>
-                    </h3>
-                    <time class="block mb-2 text-sm font-mono text-terminal-purple">P Block</time>
-                    <p class="text-base font-normal text-gray-300">
-                        Please arrive early to complete your registration and receive your event materials.
-                    </p>
-                </li>
-                <li class="mb-10 ms-6 animate__animated animate__fadeIn animate__delay-2s">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 ">
-                        <svg class="w-2.5 h-2.5 text-terminal-black"
-                             aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg"
-                             fill="currentColor"
-                             viewBox="0 0 20 20">
-                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                        </svg>
-                    </span>
-                    <h3 class="mb-1 text-lg font-semibold text-terminal-green">
-                        Welcome note<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">11:00 - 11:20 AM</span>
-                    </h3>
-                    <time class="block mb-2 text-sm font-mono text-terminal-purple">Halls</time>
-                    <p class="text-base font-normal text-gray-300">
-                        Join us for an inspiring welcome note that sets the tone for the day, featuring key insights and an overview of the event's highlights.
-                    </p>
-                </li>
-                <!-- Parallel Sessions -->
-                <li class="mb-10 ms-6 animate__animated animate__fadeIn animate__delay-1s">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 animate-ping-slow">
-                        <svg class="w-2.5 h-2.5 text-terminal-black"
-                             aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg"
-                             fill="currentColor"
-                             viewBox="0 0 20 20">
-                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                        </svg>
-                    </span>
-                    <h3 class="flex items-center mb-1 text-lg font-semibold text-terminal-green">
-                        Talks<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">10:00 AM - 1:00 PM</span>
-                    </h3>
-                    <!-- Two-column layout for parallel sessions -->
-                    <div class="grid md:grid-cols-2 gap-6 mt-4 rounded-lg">
-                        <!-- Track 1 -->
-                        <div>
-                            <h4 class="text-terminal-green font-bold mb-2">Track 1</h4>
-                            <div class="border border-terminal-green bg-terminal-black p-4 p-4 rounded-lg hover:shadow-lg hover:shadow-terminal-green/50 transition-all duration-300">
-                                <!-- Talk 1 -->
-                                <div class="mb-4 border-b border-terminal-green pb-4 rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
-                                    <h5 class="text-terminal-purple font-semibold">11:20 - 11:50 AM</h5>
-                                    <p class="font-bold text-gray-200">Linux 101</p>
-                                    <p class="text-sm text-gray-300">
-                                        An introductory experience designed for newcomers to Linux. Participants will gain insights into various Linux distributions, their unique features, and guidance on selecting the most suitable one based on personal or professional needs.
-                                    </p>
-                                    <p class="text-xs text-terminal-purple mt-1">~ Rachit Khurana</p>
-                                </div>
-                                <!-- Talk 2 -->
-                                <div class="mb-4 border-b border-terminal-green pb-4 rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
-                                    <h5 class="text-terminal-purple font-semibold">12:00 - 12:30 PM</h5>
-                                    <p class="font-bold text-gray-200">Gaming on Linux</p>
-                                    <p class="text-sm text-gray-300">
-                                        Dive into the world of gaming on Linux, where attendees will learn about popular games available on the platform, how to optimize their systems for gaming, and essential commands that enhance the gaming experience.
-                                    </p>
-                                    <p class="text-xs text-terminal-purple mt-1">~ Ayushman Agrawal Hingorani</p>
-                                </div>
-                                <!-- Talk 3 -->
-                                <div class="rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
-                                    <h5 class="text-terminal-purple font-semibold">12:40 - 1:10 PM</h5>
-                                    <p class="font-bold text-gray-200">Enhancing MCP with Dynamic Tool Discovery For Smarter AI</p>
-                            <p class="text-sm text-gray-300">Learn how dynamic tool discovery enhances MCP by enabling AI to intelligently assess and utilize tools in real time. Explore how adaptive metadata updates improve AI decision-making and efficiency.</p>
-                                    <p class="text-xs text-terminal-purple mt-1">~ Viraj Sharma</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Teack 2 -->
-                        <div>
-                            <h4 class="text-terminal-green font-bold mb-2">Track 2</h4>
-                            <div class="border border-terminal-green p-4 bg-terminal-black p-4 rounded-lg hover:shadow-lg hover:shadow-terminal-green/50 transition-all duration-300">
-                                <!-- Talk 4 -->
-                                <div class="mb-4 border-b border-terminal-green pb-4 rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
-                                    <h5 class="text-terminal-purple font-semibold">11:20 - 11:50 AM</h5>
-                                    <p class="font-bold text-gray-200">Command Your Computer</p>
-                                    <p class="text-sm text-gray-300">
-                                        Empower participants to take control of their computing environment using Linux. Attendees will learn essential commands and techniques to navigate the system efficiently, manage files, and customize their setup for optimal performance.
-                                    </p>
-                                    <p class="text-xs text-terminal-purple mt-1">~ Nishant Attrey</p>
-                                </div>
-                                <!-- Talk 5 -->
-                                <div class="mb-4 border-b border-terminal-green pb-4 rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
-                                    <h5 class="text-terminal-purple font-semibold">12:00 - 12:30 PM</h5>
-                                    <p class="font-bold text-gray-200">Learning the tools we already possess: Bash</p>
-                                    <p class="text-sm text-gray-300">
-                                        Explore the powerful Bash shell, uncovering its capabilities and tools that are often overlooked. Attendees will learn how to automate tasks, write scripts, and utilize built-in commands to enhance their productivity on Linux.
-                                    </p>
-                                    <p class="text-xs text-terminal-purple mt-1">~ K Gopal Krishna</p>
-                                </div>
-                                <!-- Talk 6 -->
-                                <div class="rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
-                                    <h5 class="text-terminal-purple font-semibold">12:40 - 1:10 PM</h5>
-                                    <p class="font-bold text-gray-200">A Quick Guide to IPsec & Open-Source VPNs</p>
-                                    <p class="text-sm text-gray-300">
-                                        An informative overview of IPsec and open-source VPN solutions, highlighting their importance in securing online communications. Participants will learn how to set up and configure VPNs, as well as best practices for maintaining privacy and security in their digital activities.
-                                    </p>
-                                    <p class="text-xs text-terminal-purple mt-1">~ Aditya Gupta</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <!-- Lunch Break -->
-                <li class="mb-10 ms-6 animate__animated animate__fadeIn animate__delay-2s">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 ">
-                        <svg class="w-2.5 h-2.5 text-terminal-black"
-                             aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg"
-                             fill="currentColor"
-                             viewBox="0 0 20 20">
-                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                        </svg>
-                    </span>
-                    <h3 class="mb-1 text-lg font-semibold text-terminal-green">
-                        Lunch Break<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">1:10 - 2:00 PM</span>
-                    </h3>
-                    <time class="block mb-2 text-sm font-mono text-terminal-purple">Cafeteria</time>
-                    <p class="text-base font-normal text-gray-300">
-                        Networking lunch provided by our sponsors. Connect with fellow Linux enthusiasts and speakers in a casual setting.
-                    </p>
-                </li>
-                <!-- Linux Party -->
-                <li class="ms-6 animate__animated animate__fadeIn animate__delay-3s">
-                    <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
-                        <svg class="w-2.5 h-2.5 text-terminal-black"
-                             aria-hidden="true"
-                             xmlns="http://www.w3.org/2000/svg"
-                             fill="currentColor"
-                             viewBox="0 0 20 20">
-                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                        </svg>
-                    </span>
-                    <h3 class="mb-1 text-lg font-semibold text-terminal-green">
-                        Linux Installation Zone<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3 ">2:00 - 3:00 PM</span>
-                    </h3>
-                    <time class="block mb-2 text-sm font-mono text-terminal-purple">Main Hall</time>
-                    <p class="text-base font-normal text-gray-300">
-                        Showcasing the advantages of Linux while helping participants install Linux. Join us for fun activities, demonstrations, and networking opportunities.
-                    </p>
-                </li>
-            </ol>
-        </section>
-        <!-- Call to Action -->
-        <div class="text-center space-y-4">
-            <div class="flex flex-wrap justify-center items-center gap-4">
-                <a href="/events/1" class="terminal-button inline-block hover:scale-105">
-                    <span class="text-terminal-black">> Register Now_</span>
-                </a>
-                <!-- <a href="https://fossunited.org/c/bennett-university/linuxfest/cfp"
-                   class="terminal-button inline-block hover:scale-105">
-                    <span class="text-terminal-black">> Call for Speakers_</span>
-                </a> -->
-            </div>
-            <p class="text-terminal-purple text-sm">Join the revolution. Register now.</p>
-        </div>
-        <div class="text-center">
-            <span class="text-terminal-green text-3xl font-bold">[Sponsors]</span>
-            <p class="text-terminal-purple text-sm"></p>
-        </div>
-        <!-- Community Stats -->
-        <div class="flex gap-6 mt-8 justify-center flex-wrap">
-            <div class="text-center border border-terminal-green p-6 pb-2 rounded-lg w-72  backdrop-blur-md">
-                <!-- <p class="text-terminal-green text-3xl font-bold">To be announced soon</p> -->
-                <img src="{% static 'lf-stacked-white.svg' %}"
-                     alt="Linux Foundation"
-                     class="w-56" />
-                <p class="text-terminal-purple mt-4">Bronze Sponsor</p>
-            </div>
-            <div class="text-center border border-terminal-green p-6 pb-2 rounded-lg w-72  backdrop-blur-md">
-                <!-- <p class="text-terminal-green text-3xl font-bold">To be announced soon</p> -->
-                <img src="{% static 'Coca-Cola_logo_white.png' %}"
-                     alt="Linux Foundation"
-                     class="w-56" />
-                <p class="text-terminal-purple mt-4">Beverage Partner</p>
-            </div>
-            <div class="text-center border border-terminal-green p-6 rounded-lg w-72 backdrop-blur-md flex items-center hidden">
-                <!-- <p class="text-terminal-green text-3xl font-bold">20+</p> -->
-                <p class="text-terminal-purple text-2xl">More to be announced soon</p>
-            </div>
+        <h1 class="md:hidden text-3xl font-bold">Linux Fest</h1>
+        <p class="text-terminal-purple mt-4">/* An interactive meetup of Linux Enthusiasts */</p>
+    </div>
+
+    <div class="flex justify-center">
+        <div class="border border-terminal-green rounded-lg p-6"><img src="{% static 'FOSS_BU_DARK_H.png' %}" alt="Linux Fest" class="w-56"/></div>
+    </div>
+
+    <!-- Event Info -->
+    <div class="border border-terminal-green p-6 rounded-lg">
+        <h2 class="text-xl font-bold text-terminal-green mb-4">[Event Details]</h2>
+        <div class="terminal-style space-y-2">
+            <p><span class="text-terminal-purple">$</span> <span class="text-terminal-yellow">echo</span> "Join us for a day of technology, innovation, and community!"</p>
+            <p><span class="text-terminal-purple">$</span> <span class="text-terminal-yellow">date</span> --meetup</p>
+            <p class="ml-4">Date: 23<sup>rd</sup> March, 2025</p>
+            <p><span class="text-terminal-purple">$</span> <span class="text-terminal-yellow">locate</span> "venue"</p>
+            <p class="ml-4">Location: Bennett University, Greater Noida</p>
         </div>
     </div>
+
+    <!-- Features -->
+    <div class="grid md:grid-cols-2 gap-6">
+        <div class="border border-terminal-green p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-terminal-green mb-4">[Featured Tracks]</h3>
+            <ul class="space-y-2">
+                <li><span class="text-terminal-purple">>></span> Beginner's Guide to Linux</li>
+                <li><span class="text-terminal-purple">>></span> Skill Up your Linux Game</li>
+                <li><span class="text-terminal-purple">>></span> Experience Zone and Install Fest</li>
+                <!-- <li><span class="text-terminal-purple">>></span> System Administration</li> -->
+                <!-- <li><span class="text-terminal-purple">>></span> Community & Collaboration</li> -->
+            </ul>
+        </div>
+
+        <div class="border border-terminal-green p-6 rounded-lg">
+            <h3 class="text-lg font-bold text-terminal-green mb-4">[Why Attend?]</h3>
+            <ul class="space-y-2">
+                <li><span class="text-terminal-purple">>></span> Expert-led workshops and talks</li>
+                <li><span class="text-terminal-purple">>></span> Networking opportunities</li>
+                <!-- <li><span class="text-terminal-purple">>></span> Live demonstrations</li> -->
+                <li><span class="text-terminal-purple">>></span> Community showcases</li>
+                <!-- <li><span class="text-terminal-purple">>></span> Exclusive swag and goodies</li> -->
+            </ul>
+        </div>
+    </div>
+<!-- Event Timeline -->
+<div class="mt-8 mb-8">
+    <h2 class="text-2xl font-bold text-terminal-green text-center mb-6 animate-pulse">[Event Schedule]</h2>
+    
+    <ol class="relative border-s border-terminal-green dark:border-terminal-green">                  
+        <li class="mb-10 ms-6 animate__animated animate__fadeIn">            
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 animate-ping-slow">
+                <svg class="w-2.5 h-2.5 text-terminal-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </span>
+            <h3 class="flex items-center mb-1 text-lg font-semibold text-terminal-green">Registration & Check-in<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">10:30 AM</span></h3>
+            <time class="block mb-2 text-sm font-mono text-terminal-purple">P Block</time>
+            <p class="text-base font-normal text-gray-300">Please arrive early to complete your registration and receive your event materials.</p>
+        </li>
+
+        <li class="mb-10 ms-6 animate__animated animate__fadeIn animate__delay-2s">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 ">
+                <svg class="w-2.5 h-2.5 text-terminal-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </span>
+            <h3 class="mb-1 text-lg font-semibold text-terminal-green">Welcome note<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">11:00 - 11:20 AM</span></h3>
+            <time class="block mb-2 text-sm font-mono text-terminal-purple">Halls</time>
+            <p class="text-base font-normal text-gray-300">Join us for an inspiring welcome note that sets the tone for the day, featuring key insights and an overview of the event's highlights.</p>
+        </li>
+
+        <!-- Parallel Sessions -->
+        <li class="mb-10 ms-6 animate__animated animate__fadeIn animate__delay-1s">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 animate-ping-slow">
+                <svg class="w-2.5 h-2.5 text-terminal-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </span>
+            <h3 class="flex items-center mb-1 text-lg font-semibold text-terminal-green">Talks<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">10:00 AM - 1:00 PM</span></h3>
+            
+            <!-- Two-column layout for parallel sessions -->
+            <div class="grid md:grid-cols-2 gap-6 mt-4 rounded-lg">
+                <!-- Track 1 -->
+                <div>
+                    <h4 class="text-terminal-green font-bold mb-2">Track 1</h4>
+                    <div class="border border-terminal-green bg-terminal-black p-4 p-4 rounded-lg hover:shadow-lg hover:shadow-terminal-green/50 transition-all duration-300">
+                        <!-- Talk 1 -->
+                        <div class="mb-4 border-b border-terminal-green pb-4 rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
+                            <h5 class="text-terminal-purple font-semibold">11:20 - 11:50 AM</h5>
+                            <p class="font-bold text-gray-200">Linux 101</p>
+                            <p class="text-sm text-gray-300">An introductory experience designed for newcomers to Linux. Participants will gain insights into various Linux distributions, their unique features, and guidance on selecting the most suitable one based on personal or professional needs.</p>
+                            <p class="text-xs text-terminal-purple mt-1">~ Rachit Khurana</p>
+                        </div>
+                        
+                        <!-- Talk 2 -->
+                        <div class="mb-4 border-b border-terminal-green pb-4 rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
+                            <h5 class="text-terminal-purple font-semibold">12:00 - 12:30 PM</h5>
+                            <p class="font-bold text-gray-200">Gaming on Linux</p>
+                            <p class="text-sm text-gray-300">Dive into the world of gaming on Linux, where attendees will learn about popular games available on the platform, how to optimize their systems for gaming, and essential commands that enhance the gaming experience.</p>
+                            <p class="text-xs text-terminal-purple mt-1">~ Ayushman Agrawal Hingorani</p>
+                        </div>
+                        
+                        <!-- Talk 3 -->
+                        <div class="rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
+                            <h5 class="text-terminal-purple font-semibold">12:40 - 1:10 PM</h5>
+                            <p class="font-bold text-gray-200">Enhancing MCP with Dynamic Tool Discovery For Smarter AI</p>
+                            <p class="text-sm text-gray-300">Learn how dynamic tool discovery enhances MCP by enabling AI to intelligently assess and utilize tools in real time. Explore how adaptive metadata updates improve AI decision-making and efficiency.</p>
+                            <p class="text-xs text-terminal-purple mt-1">~ Viraj Sharma</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Teack 2 -->
+                <div>
+                    <h4 class="text-terminal-green font-bold mb-2">Track 2</h4>
+                    <div class="border border-terminal-green p-4 bg-terminal-black p-4 rounded-lg hover:shadow-lg hover:shadow-terminal-green/50 transition-all duration-300">
+                        <!-- Talk 4 -->
+                        <div class="mb-4 border-b border-terminal-green pb-4 rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
+                            <h5 class="text-terminal-purple font-semibold">11:20 - 11:50 AM</h5>
+                            <p class="font-bold text-gray-200">Command Your Computer</p>
+                            <p class="text-sm text-gray-300">Empower participants to take control of their computing environment using Linux. Attendees will learn essential commands and techniques to navigate the system efficiently, manage files, and customize their setup for optimal performance.</p>
+                            <p class="text-xs text-terminal-purple mt-1">~ Nishant Attrey</p>
+                        </div>
+                        
+                        <!-- Talk 5 -->
+                        <div class="mb-4 border-b border-terminal-green pb-4 rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
+                            <h5 class="text-terminal-purple font-semibold">12:00 - 12:30 PM</h5>
+                            <p class="font-bold text-gray-200">Learning the tools we already possess: Bash</p>
+                            <p class="text-sm text-gray-300">Explore the powerful Bash shell, uncovering its capabilities and tools that are often overlooked. Attendees will learn how to automate tasks, write scripts, and utilize built-in commands to enhance their productivity on Linux.</p>
+                            <p class="text-xs text-terminal-purple mt-1">~ K Gopal Krishna</p>
+                        </div>
+                        
+                        <!-- Talk 6 -->
+                        <div class="rounded-lg p-4 hover:bg-terminal-green/10 transition-colors duration-300">
+                            <h5 class="text-terminal-purple font-semibold">12:40 - 1:10 PM</h5>
+                            <p class="font-bold text-gray-200">A Quick Guide to IPsec & Open-Source VPNs</p>
+                            <p class="text-sm text-gray-300">An informative overview of IPsec and open-source VPN solutions, highlighting their importance in securing online communications. Participants will learn how to set up and configure VPNs, as well as best practices for maintaining privacy and security in their digital activities.</p>
+                            <p class="text-xs text-terminal-purple mt-1">~ Aditya Gupta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+        <!-- Lunch Break -->
+        <li class="mb-10 ms-6 animate__animated animate__fadeIn animate__delay-2s">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 ">
+                <svg class="w-2.5 h-2.5 text-terminal-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </span>
+            <h3 class="mb-1 text-lg font-semibold text-terminal-green">Lunch Break<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">1:10 - 1:30 PM</span></h3>
+            <time class="block mb-2 text-sm font-mono text-terminal-purple">Cafeteria</time>
+            <p class="text-base font-normal text-gray-300">Networking lunch provided by our sponsors. Connect with fellow Linux enthusiasts and speakers in a casual setting.</p>
+        </li>
+        
+        <!-- Linux Party -->
+        <li class="ms-6 animate__animated animate__fadeIn animate__delay-3s">
+            <span class="absolute flex items-center justify-center w-6 h-6 bg-terminal-green rounded-full -start-3 ring-8 ring-white dark:ring-gray-900">
+                <svg class="w-2.5 h-2.5 text-terminal-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                </svg>
+            </span>
+            <h3 class="mb-1 text-lg font-semibold text-terminal-green">Linux Party<span class="bg-terminal-purple text-terminal-black text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3 ">1:30 - 2:30 PM</span></h3>
+            <time class="block mb-2 text-sm font-mono text-terminal-purple">Main Hall</time>
+            <p class="text-base font-normal text-gray-300">Showcasing the advantages of Linux while helping participants install Linux. Join us for fun activities, demonstrations, and networking opportunities.</p>
+        </li>
+    </ol>
+</div>
+
+    <!-- Call to Action -->
+    <div class="text-center space-y-4">
+        <div class="flex flex-wrap justify-center items-center gap-4">
+            <a href="/events/1" class="terminal-button inline-block hover:scale-105">
+                <span class="text-terminal-black">> Register Now_</span>
+            </a>
+            <a href="https://fossunited.org/c/bennett-university/linuxfest/cfp" class="terminal-button inline-block hover:scale-105">
+                <span class="text-terminal-black">> Call for Speakers_</span>
+            </a>
+        </div>
+        <p class="text-terminal-purple text-sm">Join the revolution. Register now.</p>
+    </div>
+    <div class="text-center">
+            <span class="text-terminal-green text-3xl font-bold">[Sponsors]</span>
+
+        <p class="text-terminal-purple text-sm"></p>
+
+    </div>
+    <!-- Community Stats -->
+    <div class="flex gap-6 mt-8 justify-center flex-wrap">
+        <div class="text-center border border-terminal-green p-6 pb-2 rounded-lg w-72  backdrop-blur-md">
+            <!-- <p class="text-terminal-green text-3xl font-bold">To be announced soon</p> -->
+             <img src="{% static 'lf-stacked-white.svg' %}" alt="Linux Foundation" class="w-56"/>
+            <p class="text-terminal-purple mt-4">Bronze Sponsor</p>
+        </div>
+        <div class="text-center border border-terminal-green p-6 rounded-lg w-72 backdrop-blur-md flex items-center">
+            <!-- <p class="text-terminal-green text-3xl font-bold">20+</p> -->
+            <p class="text-terminal-purple text-2xl">More to be announced soon</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
