@@ -191,6 +191,10 @@
                     <div class="space-x-4">
                         {% if user.is_authenticated %}
                             {% if user.is_staff %}
+                                <a href="/checkin"
+                                   class="terminal-link terminal-link-hover terminal-command">Checkin</a>
+                            {% endif %}
+                            {% if user.is_superuser %}
                                 <a href="{% url 'admin:index' %}"
                                    class="terminal-link terminal-link-hover terminal-command">Admin</a>
                                 <a href="{% url 'dashboard:index' %}"
@@ -212,7 +216,7 @@
                 <div class="glow"></div>
             </div>
         </div>
-        <main class="container mx-auto px-4 py-8 terminal-appear">
+        <main class="container mx-auto px-4 py-8 terminal-appear mb-16">
             {% if messages %}
                 <div class="mb-8">
                     {% for message in messages %}
@@ -224,7 +228,7 @@
             {% endif %}
             {% block content %}{% endblock %}
         </main>
-        <footer class="border-t border-terminal-green mt-auto backdrop-blur-md sticky bottom-0 z-10">
+        <footer class="border-t border-terminal-green mt-auto backdrop-blur-md fixed bottom-0 z-10 w-full">
             <div class="container mx-auto px-4 py-3 text-center text-terminal-green terminal-slide-in">
                 <p>FOSS Club BU</p>
             </div>

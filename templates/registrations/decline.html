@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <div class="bg-terminal-black border border-terminal-green p-8 rounded-lg text-center">
+        <h1 class="text-2xl font-bold text-terminal-green mb-4">Confirm RSVP Decline</h1>
+        <p class="text-terminal-white mb-6">
+            Are you sure you want to decline your RSVP for the event "<strong>{{ event.name }}</strong>"?
+        </p>
+        <form method="post" class="mt-8">
+            {% csrf_token %}
+            <button type="submit" class="terminal-button bg-terminal-red">Yes, Decline</button>
+            <a href="{% url 'registrations:confirmation' registration.id %}" class="terminal-button">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -12,6 +12,7 @@ class Registration(models.Model):
         ('rejected', 'Rejected'),
         ('checked_in', 'Checked In'),
         ('not_attending', 'Not Attending'),
+        ('declined', 'Declined'),
     )
 
     id = models.AutoField(primary_key=True)

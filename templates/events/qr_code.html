@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h1>Your QR Code</h1>
+    <p>Scan the QR code below:</p>
+    <img src="{{ qr_code_url }}" alt="QR Code" class="mx-auto d-block" style="margin-top: 20px; max-width: 100%; height: auto;">
+</div>
+{% endblock %}

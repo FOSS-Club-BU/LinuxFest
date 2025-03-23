@@ -47,9 +47,9 @@
 </head>
 <body>
     <p>Hello {{ registration.name }},</p>
-
-    <p class="important">Your registration for <strong>{{ event.name }}</strong> has been approved!</p>
-
+    <p class="important">
+        Your registration for <strong>{{ event.name }}</strong> has been approved!
+    </p>
     <div class="details">
         <h3>Event Details:</h3>
         <ul>
@@ -74,25 +74,28 @@
     </div>
     <p>Here is your QR code ticket for check-in:</p>
     <div class="qr-code">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ registration.uuid }}" 
-             alt="QR Code Ticket" 
-             width="200" 
-             height="200"
-            >
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={{ registration.uuid }}"
+                alt="QR Code Ticket"
+                width="200"
+                height="200">
+        <p>
+            If you cannot see the QR code above, <a href="https://linuxfest.fossbu.co/events/qr/{{ registration.uuid }}">click here</a> to view it in your browser.
+        </p>
     </div>
-
-    <p><strong>Important:</strong> Please bring this QR code (either printed or on your phone) to the event for a smooth check-in process.</p>
-
+    <p>
+        <strong>Important:</strong> Please bring this QR code (either printed or on your phone) to the event for a smooth check-in process.
+    </p>
     <p>Your Registration ID: {{ registration.uuid }}</p>
-
     <p>If you are unable to attend, please let us know by clicking the button below:</p>
     <p>
-        <a href="https://linuxfest.fossbu.co{% url 'registrations:rsvp_decline' registration.uuid %}" class="button">
-            I won't be able to attend
-        </a>
+        <a href="https://linuxfest.fossbu.co{% url 'registrations:rsvp_decline' registration.uuid %}"
+            class="button">I won't be able to attend</a>
     </p>
     <p>We look forward to seeing you there!</p>
-    <p>Best regards,<br>
-        FOSS Club BU Team</p>
+    <p>
+        Best regards,
+        <br>
+        FOSS Club BU Team
+    </p>
 </body>
 </html>

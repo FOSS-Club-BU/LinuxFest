@@ -1,87 +1,76 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
-
 {% block title %}{{ event.name }} | Linux Fest{% endblock %}
-
 {% block content %}
-<div class="max-w-4xl mx-auto">
-    <div class="backdrop-blur-md border border-terminal-green p-8 rounded-lg">
-        <!-- <h1 class="text-2xl font-bold text-terminal-green mb-4">[{{ event.name }}]</h1> -->
-        
-        <div class="grid-cols-1 md:grid-cols-2 gap-6 mb-8 hidden">
-            <div>
-                <p class="text-terminal-purple">$ date --event</p>
-                <p class="ml-4 text-terminal-white">
-                    {{ event.date }} @ {{ event.time|time:"H:i" }}
-                </p>
+    <div class="max-w-4xl mx-auto">
+        <div class="backdrop-blur-md border border-terminal-green p-8 rounded-lg">
+            <!-- <h1 class="text-2xl font-bold text-terminal-green mb-4">[{{ event.name }}]</h1> -->
+            <div class="grid-cols-1 md:grid-cols-2 gap-6 mb-8 hidden">
+                <div>
+                    <p class="text-terminal-purple">$ date --event</p>
+                    <p class="ml-4 text-terminal-white">{{ event.date }} @ {{ event.time|time:"H:i" }}</p>
+                </div>
+                <div>
+                    <p class="text-terminal-purple">$ locate venue</p>
+                    <p class="ml-4 text-terminal-white">{{ event.location }}</p>
+                </div>
             </div>
-            <div>
-                <p class="text-terminal-purple">$ locate venue</p>
-                <p class="ml-4 text-terminal-white">{{ event.location }}</p>
-            </div>
-        </div>
-
-        {% if event.registration_open %}
-            <div class="p-6 rounded-lg">
-                <h2 class="text-xl font-bold text-terminal-green mb-6">[Registration Form]</h2>
-                
-                {% if form.non_field_errors %}
-                    <div class="mb-6 p-4 border border-terminal-red rounded-lg">
-                        {% for error in form.non_field_errors %}
-                            <p class="text-terminal-red text-sm">{{ error }}</p>
-                        {% endfor %}
+            {% if event.registration_open %}
+                <div class="p-6 rounded-lg">
+                    <h2 class="text-xl font-bold text-terminal-green mb-6">[Registration Form]</h2>
+                    <div class="mb-6 p-4 border border-terminal-yellow rounded-lg bg-opacity-20 bg-terminal-yellow">
+                        <p class="text-terminal-yellow text-sm">
+                            Note: Registrations are currently closed for participants outside Bennett University.
+                        </p>
                     </div>
-                {% endif %}
-                
-                <form method="post" action="{% url 'events:register' event.id %}" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="space-y-6">
-                        {% for field in form %}
-                            <div class="form-field" id="field_container_{{ field.name }}"
-                                {% if field.field.conditional_field %}
-                                    data-conditional-field="{{ field.field.conditional_field.id }}"
-                                    data-conditional-value="{{ field.field.conditional_value }}"
-                                    data-originally-required="{{ field.field.originally_required|yesno:"true,false" }}"
-                                    style="display: none;"
-                                {% endif %}>
-                                <label class="text-terminal-purple block mb-2" for="{{ field.id_for_label }}">
-                                    > {{ field.label }}_
-                                    {% if field.field.originally_required %}
-                                        <span class="text-terminal-red required-indicator" id="required_indicator_{{ field.name }}">*</span>
+                    {% if form.non_field_errors %}
+                        <div class="mb-6 p-4 border border-terminal-red rounded-lg">
+                            {% for error in form.non_field_errors %}<p class="text-terminal-red text-sm">{{ error }}</p>{% endfor %}
+                        </div>
+                    {% endif %}
+                    <form method="post"
+                          action="{% url 'events:register' event.id %}"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="space-y-6">
+                            {% for field in form %}
+                                <div class="form-field"
+                                     id="field_container_{{ field.name }}"
+                                     {% if field.field.conditional_field %} data-conditional-field="{{ field.field.conditional_field.id }}" data-conditional-value="{{ field.field.conditional_value }}" data-originally-required="{{ field.field.originally_required|yesno:"true,false" }}" style="display: none;" {% endif %}>
+                                    <label class="text-terminal-purple block mb-2"
+                                           for="{{ field.id_for_label }}">
+                                        > {{ field.label }}_
+                                        {% if field.field.originally_required %}
+                                            <span class="text-terminal-red required-indicator"
+                                                  id="required_indicator_{{ field.name }}">*</span>
+                                        {% endif %}
+                                    </label>
+                                    {% with classes="terminal-input w-full" %}
+                                        {% render_field field class=classes placeholder=field.help_text %}
+                                    {% endwith %}
+                                    {% if field.errors %}
+                                        <div class="terminal-error mt-1">
+                                            {% for error in field.errors %}<p class="text-sm text-terminal-red">{{ error }}</p>{% endfor %}
+                                        </div>
                                     {% endif %}
-                                </label>
-                                {% with classes="terminal-input w-full" %}
-                                    {% render_field field class=classes placeholder=field.help_text %}
-                                {% endwith %}
-                                {% if field.errors %}
-                                    <div class="terminal-error mt-1">
-                                        {% for error in field.errors %}
-                                            <p class="text-sm text-terminal-red">{{ error }}</p>
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-                            </div>
-                        {% endfor %}
-                    </div>
-
-                    <div class="mt-8">
-                        <button type="submit" class="terminal-button w-full">
-                            Register Now >
-                        </button>
-                    </div>
-                </form>
-            </div>
-        {% else %}
-            <div class="terminal-warning p-4 rounded-lg">
-                <p>Registration is closed for this event</p>
-            </div>
-        {% endif %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="mt-8">
+                            <button type="submit" class="terminal-button w-full">Register Now ></button>
+                        </div>
+                    </form>
+                </div>
+            {% else %}
+                <div class="terminal-warning p-4 rounded-lg">
+                    <p>Registration is closed for this event</p>
+                </div>
+            {% endif %}
+        </div>
     </div>
-</div>
 {% endblock %}
-
 {% block extra_js %}
-<script>
+    <script>
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form');
     if (!form) return;
@@ -167,5 +156,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-</script>
+    </script>
 {% endblock %}
