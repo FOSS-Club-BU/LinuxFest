@@ -39,6 +39,13 @@
                     {{ registration.status|title }}
                 </p>
             </div>
+            <div>
+                <p class="text-terminal-purple">Checked In:</p>
+                <p class="{% if registration.checked_in_by %}text-terminal-green
+                          {% else %}text-terminal-red{% endif %}">
+                    {% if registration.checked_in_by %}Yes{% else %}No{% endif %}
+                </p>
+            </div>
         </div>
     </div>
 
